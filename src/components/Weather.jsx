@@ -165,11 +165,14 @@ const Weather = () => {
               <Row className="rounded-5 mb-2 p-4" style={{ backgroundColor: "#F0F5FA" }}>
                 <Col xs={12}>
                   <Col>
-                    <Row style={{ backgroundColor: "#F6F9FC" }} className="flex-nowrap overflow-hidden p-3 rounded-5">
+                    <Row
+                      style={{ backgroundColor: "#F6F9FC" }}
+                      className="flex-nowrap overflow-hidden p-3 rounded-5 justify-content-between"
+                    >
                       {Object.keys(weatherDataByDay).map((day, index) => {
                         if (!isToday(day)) {
                           return (
-                            <Col key={index}>
+                            <Col key={index} xs={4} md={3} lg={2}>
                               <h4>{day}</h4>
                               {weatherDataByDay[day]
                                 .filter(forecast => {
